@@ -14,17 +14,17 @@ module.exports = {
     //  },
 
     development: {
-    provider: () => new HDWalletProvider(mnemonic, `https://rpc.testnet.fantom.network/`), //https://rpc.testnet.fantom.network/
-    network_id: 4002,       // Chain's id
+    provider: () => new HDWalletProvider(mnemonic, `https://rpc.testnet.fantom.network/`),
+    network_id: 4002,       // Chain ID
     gas: 8500000,        // Chain gas limit
-    confirmations: 2,    // # of confs to wait between deployments. (default: 0)
-    timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+    confirmations: 1,    // # of confs to wait between deployments. (default: 0)
+    timeoutBlocks: 500,  // # of blocks before a deployment times out  (minimum/default: 50)
     skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
 
     fantomOpera: {
-    provider: () => new HDWalletProvider(mnemonic, `https://rpc.ftm.tools/`), //'https://rpcapi.fantom.network'
-    network_id: 250,       // Chain's id
+    provider: () => new HDWalletProvider(mnemonic, `https://rpc.ftm.tools/`),
+    network_id: 250,       // Chain ID
     gas: 8500000,        // Chain gas limit
     confirmations: 2,    // # of confs to wait between deployments. (default: 0)
     timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
@@ -48,7 +48,7 @@ module.exports = {
   },
 
   contracts_directory: './contracts/',
-  contracts_build_directory: './frontend/src/config/abi/',
+  contracts_build_directory: './contracts/build',
 
   // Set default mocha options here, use special reporters etc.
   // mocha: {

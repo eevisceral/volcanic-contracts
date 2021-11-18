@@ -1,7 +1,7 @@
 // require('dotenv').config();
 var Multicall = artifacts.require("./Multicall");
-var Lava = artifacts.require("./cake");
-var LavaMasterChef = artifacts.require("./masterchef");
+var Lava = artifacts.require("./LavaToken");
+var LavaMasterChef = artifacts.require("./MasterChef");
 const admin = '0x87e42684b1c1468f18e09342ea803f34b917ef32';
 
 // module.exports = function(deployer) {
