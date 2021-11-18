@@ -1215,7 +1215,7 @@ library SafeBEP20 {
 // MasterChef is the master of LAVA. He can make LAVA and he is a fair guy.
 //
 // Note that it's ownable and the owner wields tremendous power. The ownership
-// will be transferred to a governance smart contract once FPUP is sufficiently
+// will be transferred to a governance smart contract once LAVA is sufficiently
 // distributed and the community can show to govern itself.
 //
 // Have fun reading it. Hopefully it's bug-free. God bless.
@@ -1228,7 +1228,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
         uint256 amount; // How many LP tokens the user has provided.
         uint256 rewardDebt; // Reward debt. See explanation below.
         //
-        // We do some fancy math here. Basically, any point in time, the amount of FPUP
+        // We do some fancy math here. Basically, any point in time, the amount of LAVA
         // entitled to a user but is pending to be distributed is:
         //
         //   pending reward = (user.amount * pool.accLavaPerShare) - user.rewardDebt
@@ -1243,18 +1243,18 @@ contract MasterChef is Ownable, ReentrancyGuard {
     // Info of each pool.
     struct PoolInfo {
         IBEP20 lpToken; // Address of LP token contract.
-        uint256 allocPoint; // How many allocation points assigned to this pool. FPUPs to distribute per second.
-        uint256 lastRewardSecond; // Last second that FPUPs distribution occurs.
-        uint256 accLavaPerShare; // Accumulated FPUPs per share, times 1e18. See below.
+        uint256 allocPoint; // How many allocation points assigned to this pool. LAVAs to distribute per second.
+        uint256 lastRewardSecond; // Last second that LAVAs distribution occurs.
+        uint256 accLavaPerShare; // Accumulated LAVAs per share, times 1e18. See below.
         uint16 depositFeeBP; // Deposit fee in basis points
         uint256 lpSupply;
     }
 
-    // The FPUP TOKEN!
+    // The LAVA TOKEN!
     LavaToken public lava;
     // Dev address.
     address public devaddr;
-    // FPUP tokens created per second.
+    // LAVA tokens created per second.
     uint256 public LavaPerSecond;
     // Deposit Fee address
     address public feeAddress;
@@ -1390,7 +1390,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
         return _to.sub(_from);
     }
 
-    // View function to see pending fPup on frontend.
+    // View function to see pending LAVA on frontend.
     function pendingLava(uint256 _pid, address _user)
         external
         view
@@ -1547,7 +1547,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
         emit EmergencyWithdraw(msg.sender, _pid, amount);
     }
 
-    // Safe lava transfer function, just in case if rounding error causes pool to not have enough FPUPs.
+    // Safe lava transfer function, just in case if rounding error causes pool to not have enough LAVAs.
     function safeLavaTransfer(address _to, uint256 _amount) internal {
         uint256 lavaBal = lava.balanceOf(address(this));
         bool transferSuccess = false;
