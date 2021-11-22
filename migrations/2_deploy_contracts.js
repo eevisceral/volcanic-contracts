@@ -18,7 +18,7 @@ module.exports = function (deployer) {
     // get JS instance of deployed ERC20 contract
     const lavaInstance = await Lava.deployed();
     // pass its address as argument for MasterChef's constructors
-    await deployer.deploy(LavaMasterChef, Lava.address, admin, admin, "1000000000000000000", 4813211);
+    await deployer.deploy(LavaMasterChef, Lava.address, admin, admin, "3000000000000000", 23777777);
                           // {_tokenAddress, _devaddr, _feeAddress, _LavaPerBlock, _startBlock}
   });
 };

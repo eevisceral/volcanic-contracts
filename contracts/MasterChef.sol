@@ -762,7 +762,7 @@ contract BEP20 is Context, IBEP20, Ownable {
     string private _symbol;
     uint8 private _decimals;
 
-    uint256 constant MAXSUPPLY = 11000 ether;
+    uint256 constant MAXSUPPLY = 100000 ether;
 
     /**
      * @dev Sets the values for {name} and {symbol}, initializes {decimals} with
@@ -1258,8 +1258,8 @@ contract MasterChef is Ownable, ReentrancyGuard {
     uint256 public LavaPerSecond;
     // Deposit Fee address
     address public feeAddress;
-    // Max emission rate.
-    uint256 public constant MAX_EMISSION_RATE = 2000000000000000000;
+    // Max emission rate. 1000000000000000000 is 1/block
+    uint256 public constant MAX_EMISSION_RATE = 0.25 ether;
 
     // Info of each pool.
     PoolInfo[] public poolInfo;
